@@ -1,22 +1,14 @@
 body {
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.poster-container {
-    position: relative;
-    width: 500px;
-    height: 700px;
+    margin: 0; /* Removes default margin */
+    overflow: hidden; /* Prevents scrolling */
 }
 
 #poster {
-    width: 100%;
-    height: 100%;
-    transition: filter 0.3s ease-in-out;
+    width: 100%; /* Makes the image scale to the full width of the browser */
+    height: auto; /* Keeps the aspect ratio */
+    transition: filter 0.3s ease; /* Smooth transition for filter effects */
 }
 
-
+.glitch {
+    filter: blur(5px); /* Blur effect for glitching */
+}
