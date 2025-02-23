@@ -13,11 +13,13 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Adjust to fit the screen */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Scale to fill width of the screen */
+    height: 100%; /* Scale to fill height of the screen */
+    object-fit: cover; /* Maintain aspect ratio while filling space */
 }
 
 #poster2 {
     opacity: 0; /* Initially hide poster 2 */
     transition: opacity 0.3s ease; /* Smooth transition for visibility */
 }
+
