@@ -1,24 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    overflow: hidden; /* Prevents scrolling */
-    background-color: black; /* Optional */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    background-color: black; /* Change this to fit your design */
 }
 
-#poster-container {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('poster.png'); /* Ensure the file is in the same folder */
-    background-size: contain; /* Ensures the entire image is visible */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
+.poster-container {
+    position: relative;
+    width: 100%; /* Adjust based on your image dimensions */
+    height: auto;
 }
+
+.poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure both images are the same size */
+    height: auto;
+    pointer-events: none; /* Allow mouse events to pass through */
+}
+
+.poster2 {
+    clip-path: inset(0);
+    opacity: 0; /* Start with the second poster hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.poster1:hover + .poster2 {
+    opacity: 1; /* Show the second poster when hovering over the first */
+    clip-path: circle(47.5px at center); /* Adjust the size of the visible area */
+}
+
