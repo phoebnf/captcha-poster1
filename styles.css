@@ -1,28 +1,21 @@
-body {
-    margin: 0; /* Removes default margin */
-    overflow: hidden; /* Prevents scrolling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#poster {
-  body {
-    margin: 0; 
-    padding: 0;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of viewport */
-    overflow: hidden;
-    background-color: black; /* Optional, to avoid white borders */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    overflow: hidden; /* Prevents scrolling */
+    background-color: black; /* Optional */
 }
 
 #poster {
-    max-width: 100vw; /* Fit within screen width */
-    max-height: 100vh; /* Fit within screen height */
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-.glitch {
-    filter: blur(5px); /* Blur effect for glitching */
+    width: 100vw;  /* Fit within viewport width */
+    height: 100vh; /* Fit within viewport height */
+    object-fit: contain; /* Ensures the whole image fits without cropping */
 }
