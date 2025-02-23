@@ -8,9 +8,25 @@
 </head>
 <body>
     <div class="poster-container">
-        <img src="poster1.png" alt="First Poster" class="poster poster1">
-        <img src="poster2.png" alt="Second Poster" class="poster poster2">
+        <img src="poster1.png" alt="Poster 1" class="poster" id="poster1">
+        <img src="poster2.png" alt="Poster 2" class="poster" id="poster2">
     </div>
-    <script src="script.js"></script>
+    <script>
+        const poster1 = document.getElementById('poster1');
+        const poster2 = document.getElementById('poster2');
+
+        poster1.addEventListener('mouseover', (e) => {
+            const rect = poster1.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            poster2.style.clipPath = `circle(95px at ${x}px ${y}px)`;
+            poster2.style.opacity = '1'; // Show poster 2
+        });
+
+        poster1.addEventListener('mouseout', () => {
+            poster2.style.opacity = '0'; // Hide poster 2
+        });
+    </script>
 </body>
 </html>
