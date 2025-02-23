@@ -5,17 +5,20 @@
 }
 
 body {
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Prevents scrolling */
+    background-color: black; /* Optional */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    overflow: hidden; /* Prevents scrolling */
-    background-color: black; /* Optional */
 }
 
-#poster {
-    width: 100vw;  /* Fit within viewport width */
-    height: 100vh; /* Fit within viewport height */
-    object-fit: contain; /* Ensures the whole image fits without cropping */
+#poster-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('poster.png'); /* Ensure the file is in the same folder */
+    background-size: contain; /* Ensures the entire image is visible */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
 }
