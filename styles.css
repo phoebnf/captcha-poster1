@@ -1,37 +1,23 @@
 body {
     margin: 0;
-    background-color: black; /* Change this to fit your design */
-    overflow: hidden; /* Prevent scrolling if the image is large */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .poster-container {
     position: relative;
-    width: 100vw; /* Make the container take the full width of the viewport */
-    height: 100vh; /* Make the container take the full height of the viewport */
-    display: flex;
-    justify-content: center; /* Center the posters horizontally */
-    align-items: center; /* Center the posters vertically */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
 }
 
 .poster {
-    position: absolute; /* Positioning for overlay */
-    top: 50%; /* Centering the posters */
-    left: 50%; /* Centering the posters */
-    transform: translate(-50%, -50%); /* Centering adjustment */
-    width: auto; /* Maintain the aspect ratio */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 100%; /* Ensure it does not overflow the container */
-    max-height: 100%; /* Ensure it does not overflow the container */
-    pointer-events: none; /* Allow mouse events to pass through */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust to fit the screen */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.poster2 {
-    clip-path: inset(0);
-    opacity: 0; /* Start with the second poster hidden */
-    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
-}
-
-.poster1:hover + .poster2 {
-    opacity: 1; /* Show the second poster when hovering over the first */
-    clip-path: circle(47.5px at center); /* Adjust the size of the visible area */
+#poster2 {
+    opacity: 0; /* Initially hide poster 2 */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
 }
